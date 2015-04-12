@@ -22,21 +22,24 @@ After installing the Sync Gateway, you can follow these instructions to run it a
 If you're following along with my own setup, you can create a configuration file with the following contents which will tell the Sync Gateway to connect to your Couchbase Server.
 
 {
+
 	"log": ["CRUD", "HTTP+"],
 	"databases": {
 		"sync_gateway": {
 			"server": "http://localhost:8091",
 			"bucket": "sync_gateway",
 			"sync": `
-function(doc){
-	channel(doc.channels);
-}`,
+				function(doc){
+					channel(doc.channels);
+				}`,
 			"users": {
 				"GUEST": {"disabled": false, "admin_channels": ["*"]}
 			}
 		}
 	}
+	
 }
+
 
 To run sync gateway with a configuration file you can use the command: sync_gateway <path to your config file>
 
