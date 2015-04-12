@@ -49,7 +49,12 @@ To deploy the app to your BB10 device, you can simply create a new app through w
 The above would generate the necessary files for a template app in the folder c:\testapp.
 More info here: http://developer.blackberry.com/html5/documentation/v2_2/creating_a_webworks_project.html
 
-Once you've created the app using the above command, you can simply copy and replace the config.xml and www directory in the newly created app with the ones from the pdbtest app folder. Once this is done you can deploy it to your device using:
+Once you've created the app using the above command, you can simply copy and replace the config.xml and www directory in the newly created app with the ones from the pdbtest app folder. 
+
+Be sure to replace the value of the remotedbName property of the databases object to point to your sync gateway. It should look something like this: 
+	http://192.168.1.100:4984/sync_gateway
+
+ Once this is done you can deploy it to your device using:
 	webworks run
 
 Features
