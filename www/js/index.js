@@ -25,7 +25,7 @@ var app = {
         remotedb: null,
         db: null,
         rep: null,
-        remotedbName: 'http://192.168.1.142:4984/sync_gateway'
+        remotedbName: 'URL TO YOUR GATEWAY' // this must be set to point to your gateway
     },
 
     offline: true,
